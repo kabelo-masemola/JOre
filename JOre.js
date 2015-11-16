@@ -3,12 +3,6 @@
  * @date:          14 November 2015
  * @title:         JOre
  *
- * @Description:   This is a VERY simple JS library that mimics JQuery syntax style (method chaining).
- *                 JOre is a scaled down alternative to JQuery I specifically made for jobmail feature site,
- *                 for the manipulation of visual elements.
- *
- * @Goal:          To create a simple javascript library that can give the jobmail development team the same
- *                 functionalities that JQuery offers on the featuresite.
  */
 
 
