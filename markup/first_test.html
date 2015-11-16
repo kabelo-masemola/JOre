@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This is a test html file for JOre</title>
+    <script src="../JOre.js"></script>
+    <style type="text/css">
+        #firstOne{
+
+        }
+        #secondOne{
+            display: none;
+        }
+        #thirdOne{
+            display: none;
+        }
+        #fourthOne{
+            display: none;
+        }
+        #fifthOne{
+            display: none;
+        }
+        #counter{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="firstOne">
+    <h1>first one</h1>
+</div>
+
+<div  id="secondOne">
+    <h1>second one</h1>
+</div>
+
+<div id="thirdOne">
+    <h1>third one</h1>
+</div>
+<div id="fourthOne">
+    <h1>4 one</h1>
+</div>
+<div id="fifthOne">
+    <h1>5 one</h1>
+</div>
+<input id="backButton" type="button" value="back" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input id="nextButton" type="button" value="next" />
+<span id="counter">0</span>
+<script>
+
+        var pre = document.getElementById('backButton');
+        var next = document.getElementById('nextButton');
+        pre.addEventListener('click',function(){
+            var layers = ["firstOne","secondOne","thirdOne","fourthOne","fifthOne"];
+            var counter = parseInt(document.getElementById('counter').innerHTML);
+            if(counter != 0){
+                $JOre(layers[counter]).swapPositions(layers[counter - 1]).hide();
+                counter--;
+                document.getElementById('counter').innerHTML = counter;
+                $JOre(layers[counter]).show();
+
+            }
+            else{
+                console.log('reached first element');
+            }
+        })
+
+         next.addEventListener('click',function(){
+             var layers = ["firstOne","secondOne","thirdOne","fourthOne","fifthOne"];
+             var counter = parseInt(document.getElementById('counter').innerHTML);
+            if(counter != (layers.length -1 )){
+                $JOre(layers[counter]).swapPositions(layers[counter + 1]).hide();
+                counter++;
+                document.getElementById('counter').innerHTML = counter;
+                $JOre(layers[counter]).show();
+
+            }
+            else{
+                console.log('reached last element');
+            }
+        })
+
+</script>
+
+</body>
+</html>
